@@ -1,0 +1,19 @@
+#my aliases
+
+# some ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# virtual python environments
+alias nucastro='source ~/python-venv/nucastro/bin/activate'
+
+# connect 2nd monitor
+alias conmon='xrandr --output DP-1 --auto --right-of eDP-1'
+#connect headphone
+alias conphones='bluetoothctl connect 14:3F:A6:34:58:E3'
+
+# hop into machines
+alias cori='ssh -Y -l biboyd cori.nersc.gov'
+alias alcyone='ssh -l biboyd alcyone.iacs.stonybrook.edu'
+alias electra='ssh -l biboyd electra.iacs.stonybrook.edu'
