@@ -32,7 +32,7 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -54,8 +54,8 @@ bindsym $mod+Shift+s exec xfce4-screenshooter
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 #lock screen
-#bindsym $mod+p exec i3lock -e -i /home/bb/Pictures/dtop_pics/bottom_half.png
-bindsym $mod+p exec /home/bb/.config/i3/i3lock-fancy-multimonitor/lock -n -p
+bindsym $mod+p exec i3lock -t -e -i /home/bb/Pictures/curr_background.png
+#bindsym $mod+p exec /home/bb/.config/i3/i3lock-fancy-multimonitor/lock -n -p
 
 # change focus
 bindsym $mod+h focus left
@@ -140,9 +140,8 @@ bindsym $mod+Shift+c reload
 # reboot
 #bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-#-old-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Shift+e exec xfce4-session-logout
-
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e sticky toggle
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -171,7 +170,7 @@ bindsym $mod+r mode "resize"
 
 #assign [class="Slack"] 3
 #assign [class="Mattermost"] 3
-for_window [class="Spotify"] move container to workspace 2
+#for_window [class="Spotify"] move container to workspace 2
 for_window [class="mpv"] fullscreen toggle, floating enable
 for_window [class="zoom"] foating enable
 #assign [class="Steam"] 5
@@ -182,17 +181,19 @@ for_window [class="zoom"] foating enable
 
 
 bar {
-        mode hide
+        mode dock
         modifier Mod1
         status_command i3status
+        font pango:monospace 10
+        tray_padding 8
 }
 
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id synergy
 
 # You can also use any non-zero value if you'd like to have a border
-for_window [class=".*"] border pixel 1
-default_border pixel 1
+for_window [class=".*"] border pixel 3
+default_border pixel 3
 
 #start gaps
 gaps inner 10
@@ -324,3 +325,23 @@ mode "$mode_gaps_left" {
 #start default
 #exec --no-startup-id firefox
 #exec --no-startup-id xfce4-terminal
+
+#put 2nd screen to right
+#exec xrandr --output DP-1 --auto --right-of eDP-1
+#exec xrandr --output HDMI-1 --auto --right-of eDP-1
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5 #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5 #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pamixer -t # mute sound
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym Mod1+space exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+#move workspace btwn monitors
+bindsym Shift+$mod+m exec i3-msg move workspace to output left
+
