@@ -112,20 +112,22 @@ if ! shopt -oq posix; then
 fi
 
 # user path
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="/home/bb/.local/bin:$PATH"
 
 # old CGM bash scripts (ffmpeg stuff etc.)
-export PATH="$HOME/Repo/CGM/bash_scripts:$PATH"
+export PATH="/home/bb/Repo/CGM/bash_scripts:$PATH"
 
-# Install Ruby Gems to ~/gems
-export GEM_HOME="$HOME/.local/share/gem/ruby/3.0.0"
-export PATH="$GEM_HOME/bin:$PATH"
 
 #pip variables. no accidental pip installs
 export PIP_REQUIRE_VIRTUALENV=true
 
 # set Amrex env variables
-export MICROPHYSICS_HOME="$HOME/Repo/Microphysics"
-export AMREX_HOME="$HOME/Repo/amrex"
+export MICROPHYSICS_HOME="/home/bb/Repo/Microphysics"
+export AMREX_HOME="/home/bb/Repo/amrex"
+#export FBOXLIB_HOME="/home/bb/Repo/FBoxLib"
 
-export INITIAL_MODEL_HOME="$HOME/Repo/initial-models"
+export INITIAL_MODEL_HOME="/home/bb/Repo/initial-models"
+# Install Ruby Gems to ~/gems
+#export GEM_HOME="$HOME/.local/share/gem/ruby/3.0.0"
+#export PATH="$GEM_HOME/bin:$PATH"
+source /usr/share/nvm/init-nvm.sh

@@ -7,9 +7,11 @@ alias l='ls -CF'
 
 # virtual python environments
 alias nucastro='source ~/python-venv/nucastro/bin/activate'
+alias bblog='source ~/python-venv/bblog/bin/activate'
 
 # connect 2nd monitor
-alias conmon='xrandr --output DP-1 --auto --right-of eDP-1'
+alias convga='xrandr --output DP-1 --auto --right-of eDP-1'
+alias conhdmi='xrandr --output HDMI-1 --auto --right-of eDP-1'
 #connect headphone
 alias conphones='bluetoothctl connect 14:3F:A6:34:58:E3'
 
