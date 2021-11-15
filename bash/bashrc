@@ -96,7 +96,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
+if [ -e ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
@@ -111,11 +111,16 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# add tab complete functions
+complete -c man which
+complete -cf sudo
+source /usr/share/bash-completion/completions/git
+
 # user path
 export PATH="/home/bb/.local/bin:$PATH"
 
 # old CGM bash scripts (ffmpeg stuff etc.)
-export PATH="/home/bb/Repo/CGM/bash_scripts:$PATH"
+export PATH="/home/bb/Repo/config_files/convenient_scripts:$PATH"
 
 
 #pip variables. no accidental pip installs
@@ -131,3 +136,8 @@ export INITIAL_MODEL_HOME="/home/bb/Repo/initial-models"
 #export GEM_HOME="$HOME/.local/share/gem/ruby/3.0.0"
 #export PATH="$GEM_HOME/bin:$PATH"
 source /usr/share/nvm/init-nvm.sh
+
+# MESA variables
+export MESA_DIR="/home/bb/Repo/mesa"
+export MESASDK_ROOT="/opt/mesasdk"
+source $MESASDK_ROOT/bin/mesasdk_init.sh
