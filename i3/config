@@ -54,7 +54,7 @@ bindsym $mod+Shift+s exec xfce4-screenshooter
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 #lock screen
-bindsym $mod+p exec i3lock -t -e -i /home/bb/Pictures/curr_background.png
+bindsym $mod+p exec i3lock  -C -e  -i /home/bb/Pictures/curr_background.png --inside-color=11111111 --ring-color=00000055 --keyhl-color=68460999 --line-uses-ring --radius=260
 #bindsym $mod+p exec /home/bb/.config/i3/i3lock-fancy-multimonitor/lock -n -p
 
 # change focus
@@ -120,8 +120,8 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 #cycle thorugh workspaces
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+Tab workspace next_on_output
+bindsym $mod+Shift+Tab workspace prev_on_output
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
