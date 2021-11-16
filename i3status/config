@@ -69,9 +69,9 @@ memory {
         format_degraded = "MEMORY < %available"
 }
 
-tztime local {
-        format = "<span color='#00ffff'>%time</span>"
-        format_time = "%Y-%m-%d %H:%M:%S"
+tztime local{
+        format = "<span color='#00ffff'> %Y-%m-%d %H:%M:%S </span>"
+        #format_time = "%Y-%m-%d %H:%M:%S"
 
 }
 
