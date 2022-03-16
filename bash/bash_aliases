@@ -8,11 +8,12 @@ alias l='ls -CF'
 # virtual python environments
 alias nucastro='source ~/python-venv/nucastro/bin/activate'
 alias bblog='source ~/python-venv/bblog/bin/activate'
+alias astrolab='source ~/python-venv/astrolab/bin/activate'
 
 # connect 2nd monitor
 alias con-vga='xrandr --output DP-1 --auto --right-of eDP-1'
-alias con-hdmi='xrandr --output HDMI-1 --auto --right-of eDP-1'
-alias discon-monitor='xrandr --auto'
+alias con-hdmi='xrandr --output HDMI-1 --auto --right-of eDP-1; pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo+input:analog-stereo'
+alias discon-monitor='xrandr --auto; pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo+input:analog-stereo'
 
 #connect headphone
 alias con-phones='bluetoothctl connect 14:3F:A6:34:58:E3'
@@ -22,6 +23,9 @@ alias discon-phones='bluetoothctl disconnect'
 alias con-wifi='iwctl station wlan0 scan'
 
 # hop(ssh) into machines
-alias cori='ssh -Y -l biboyd cori.nersc.gov'
+alias cori='ssh -X -l biboyd cori.nersc.gov'
 alias alcyone='ssh -l biboyd alcyone.iacs.stonybrook.edu'
 alias electra='ssh -l biboyd electra.iacs.stonybrook.edu'
+alias fleetwood='ssh -Yl biboyd fleetwood.astro.sunysb.edu'
+alias vulcan='ssh -Yl bbrendan vulcan.astro.sunysb.edu'
+alias uhura='ssh -Yl bbrendan uhura.astro.sunysb.edu'
