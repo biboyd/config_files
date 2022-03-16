@@ -112,7 +112,7 @@ if ! shopt -oq posix; then
 fi
 
 # add tab complete functions
-complete -c man which
+complete -c man which killall
 complete -cf sudo
 source /usr/share/bash-completion/completions/git
 
