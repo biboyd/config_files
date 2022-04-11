@@ -117,27 +117,26 @@ complete -cf sudo
 source /usr/share/bash-completion/completions/git
 
 # user path
-export PATH="/home/bb/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # old CGM bash scripts (ffmpeg stuff etc.)
-export PATH="/home/bb/Repo/config_files/convenient_scripts:$PATH"
+export PATH="$HOME/Repo/config_files/convenient_scripts:$PATH"
 
 
 #pip variables. no accidental pip installs
 export PIP_REQUIRE_VIRTUALENV=true
 
 # set Amrex env variables
-export MICROPHYSICS_HOME="/home/bb/Repo/Microphysics"
-export AMREX_HOME="/home/bb/Repo/amrex"
-#export FBOXLIB_HOME="/home/bb/Repo/FBoxLib"
+export MICROPHYSICS_HOME="$HOME/Repo/Microphysics"
+export AMREX_HOME="$HOME/Repo/amrex"
 
-export INITIAL_MODEL_HOME="/home/bb/Repo/initial-models"
+export INITIAL_MODEL_HOME="$HOME/Repo/initial-models"
 # Install Ruby Gems to ~/gems
 #export GEM_HOME="$HOME/.local/share/gem/ruby/3.0.0"
 #export PATH="$GEM_HOME/bin:$PATH"
 source /usr/share/nvm/init-nvm.sh
 
 # MESA variables
-export MESA_DIR="/home/bb/Repo/mesa"
+export MESA_DIR="$HOME/Repo/mesa"
 export MESASDK_ROOT="/opt/mesasdk"
 source $MESASDK_ROOT/bin/mesasdk_init.sh
