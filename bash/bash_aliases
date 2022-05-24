@@ -17,7 +17,9 @@ alias discon-monitor='xrandr --auto; pactl set-card-profile alsa_card.pci-0000_0
 
 #connect headphone
 alias con-phones='bluetoothctl connect 14:3F:A6:34:58:E3'
+alias con-ohm='bluetoothctl connect C8:84:47:27:C5:25'
 alias discon-phones='bluetoothctl disconnect'
+alias discon-ohm='bluetoothctl disconnect'
 
 #Scan for wifi
 alias con-wifi='iwctl station wlan0 scan'
