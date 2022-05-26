@@ -135,8 +135,3 @@ export INITIAL_MODEL_HOME="$HOME/Repo/initial-models"
 #export GEM_HOME="$HOME/.local/share/gem/ruby/3.0.0"
 #export PATH="$GEM_HOME/bin:$PATH"
 source /usr/share/nvm/init-nvm.sh
-
-# MESA variables
-export MESA_DIR="$HOME/Repo/mesa"
-export MESASDK_ROOT="/opt/mesasdk"
-source $MESASDK_ROOT/bin/mesasdk_init.sh
