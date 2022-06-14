@@ -1,3 +1,10 @@
-colo desert
 syntax on
+colo desert
+set background=dark
 set ts=4 sw=4
+
+set incsearch  
+
+set encoding=utf-8
+set fileencoding=utf-8
+
