@@ -8,7 +8,10 @@ alias l='ls -CF'
 # virtual python environments
 alias nucastro='source ~/python-venv/nucastro/bin/activate'
 alias bblog='source ~/python-venv/bblog/bin/activate'
-alias astrolab='source ~/python-venv/astrolab/bin/activate'
+alias ihpcss='source ~/python-venv/ihpcss/bin/activate'
+
+# wrapper aliases
+alias nvvp='/home/bb/Repo/config_files/wrappers/nvvp_wrapper.sh'
 
 # connect 2nd monitor
 alias con-vga='xrandr --output DP-1 --auto --right-of eDP-1'

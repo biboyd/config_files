@@ -122,6 +122,8 @@ export PATH="$HOME/.local/bin:$PATH"
 # old CGM bash scripts (ffmpeg stuff etc.)
 export PATH="$HOME/Repo/config_files/convenient_scripts:$PATH"
 
+# add visit to path
+export PATH="/opt/visit/bin:$PATH"
 
 #pip variables. no accidental pip installs
 export PIP_REQUIRE_VIRTUALENV=true
@@ -134,4 +136,3 @@ export INITIAL_MODEL_HOME="$HOME/Repo/initial-models"
 # Install Ruby Gems to ~/gems
 #export GEM_HOME="$HOME/.local/share/gem/ruby/3.0.0"
 #export PATH="$GEM_HOME/bin:$PATH"
-source /usr/share/nvm/init-nvm.sh
