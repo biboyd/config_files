@@ -11,7 +11,10 @@ alias bblog='source ~/python-venv/bblog/bin/activate'
 alias ihpcss='source ~/python-venv/ihpcss/bin/activate'
 
 # wrapper aliases
-alias nvvp='/home/bb/Repo/config_files/wrappers/nvvp_wrapper.sh'
+alias nvvp="$HOME/Repo/config_files/wrappers/nvvp_wrapper.sh"
+
+#simple command aliases
+alias code='codium'
 
 # connect 2nd monitor
 alias con-vga='xrandr --output DP-1 --auto --right-of eDP-1'
