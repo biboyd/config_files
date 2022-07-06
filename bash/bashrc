@@ -136,3 +136,9 @@ export INITIAL_MODEL_HOME="$HOME/Repo/initial-models"
 # Install Ruby Gems to ~/gems
 #export GEM_HOME="$HOME/.local/share/gem/ruby/3.0.0"
 #export PATH="$GEM_HOME/bin:$PATH"
+
+# add Node Version Manager
+if [ $HOSTNAME == 'Otis' ]
+then
+	source /usr/share/nvm/init-nvm.sh
+fi
