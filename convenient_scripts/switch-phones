@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# switch the source/sink of my headphones
+
+curr_sink=`pactl get-default-sink`
+
+echo $curr_sink
+if [ $curr_sink = "bluez_output.14_3F_A6_34_58_E3.a2dp-sink" ]
+then
+    echo "in a2dp, switching to headset"
+	pactl set-card-profile bluez_card.14_3F_A6_34_58_E3 headset-head-unit
+
+elif [ $curr_sink = "bluez_output.14_3F_A6_34_58_E3.headset-head-unit" ]
+then
+    echo "in headset, switching to a2dp"
+	pactl set-card-profile bluez_card.14_3F_A6_34_58_E3 a2dp-sink
+
+else
+	echo "Couldn't Switch Headphones Profile. The current sink is not a recognized profile"
+	echo "current sink:  $curr_sink"
+fi
+
