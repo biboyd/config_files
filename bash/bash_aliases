@@ -13,9 +13,6 @@ alias ihpcss='source ~/python-venv/ihpcss/bin/activate'
 # wrapper aliases
 alias nvvp="$HOME/Repo/config_files/wrappers/nvvp_wrapper.sh"
 
-#simple command aliases
-alias code='codium'
-
 # connect 2nd monitor
 alias con-vga='xrandr --output DP-1 --auto --right-of eDP-1'
 alias con-hdmi='xrandr --output HDMI-1 --auto --right-of eDP-1; pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo+input:analog-stereo'
