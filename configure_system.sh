@@ -17,7 +17,7 @@ function add_configdir {
     
 	for f in $dir/*
 	do
-		mkdir -p ~/.config/$f
+		mkdir -p ~/.config/$dir
 		ln -f $f ~/.config/$f
 	done
 }
