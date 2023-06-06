@@ -2,21 +2,40 @@
 
 # switch the source/sink of my headphones
 
-curr_sink=`pactl get-default-sink`
+curr_profile=`pactl list cards | awk -v RS='' '/bluez/' | awk -F': ' '/Active Profile/ { print $2 }'`
 
-echo $curr_sink
-if [ $curr_sink = "bluez_output.14_3F_A6_34_58_E3.a2dp-sink" ]
-then
-    echo "in a2dp, switching to headset"
-	pactl set-card-profile bluez_card.14_3F_A6_34_58_E3 headset-head-unit
+wanted_sink=$1
 
-elif [ $curr_sink = "bluez_output.14_3F_A6_34_58_E3.headset-head-unit" ]
+if [ `pactl get-default-sink` = "bluez_output.14_3F_A6_34_58_E3.1" ]
 then
-    echo "in headset, switching to a2dp"
-	pactl set-card-profile bluez_card.14_3F_A6_34_58_E3 a2dp-sink
+	echo Current btooth profile is $curr_profile
+	echo " can choose what you want with either \"headset\" or \"nice-sink\" "
+
+    if [ "$wanted_sink" = "headset" ]
+    then 
+    	echo "trying to change to $wanted_sink"
+    	pactl set-card-profile bluez_card.14_3F_A6_34_58_E3 headset-head-unit
+    
+    elif [ "$wanted_sink" = "nice-sink" ]
+    then 
+    	echo "trying to change to $wanted_sink"
+    	pactl set-card-profile bluez_card.14_3F_A6_34_58_E3 a2dp-sink
+    
+    elif [[ "$curr_profile" == "a2dp-sink"* ]]
+    then
+        echo "was in a2dp, switching to headset mode"
+    	pactl set-card-profile bluez_card.14_3F_A6_34_58_E3 headset-head-unit
+    
+    elif [[ "$curr_profile" == "headset-head-unit"* ]]
+    then
+        echo "was in headset, switching to a2dp mode"
+    	pactl set-card-profile bluez_card.14_3F_A6_34_58_E3 a2dp-sink
+    
+    else
+    	echo "Couldn't Switch Headphones Profile. The current sink is not a recognized profile"
+    	echo "current sink:  $curr_profile"
+    fi
 
 else
-	echo "Couldn't Switch Headphones Profile. The current sink is not a recognized profile"
-	echo "current sink:  $curr_sink"
+	echo "Not connected to WH1000XM4 bluetooth, so can't switch profiles"
 fi
-
