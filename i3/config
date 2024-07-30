@@ -55,7 +55,7 @@ bindsym $mod+Shift+s exec xfce4-screenshooter
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 #lock screen
-bindsym $mod+p exec i3lock  -C -e  -i /home/bb/Pictures/curr_background.png --inside-color=11111111 --ring-color=cceefb99 --keyhl-color=ff525399 --insidever-color=cceefb55 --ringver-color=cceefb99 --insidewrong-color=930e1e55 --ringwrong-color=930e1e99 --line-uses-ring --radius=160
+bindsym $mod+p exec i3lock  -C -e  -i ~/Pictures/curr_background.png --inside-color=11111111 --ring-color=cceefb99 --keyhl-color=ff525399 --insidever-color=cceefb55 --ringver-color=cceefb99 --insidewrong-color=930e1e55 --ringwrong-color=930e1e99 --line-uses-ring --radius=160
 
 # change focus
 bindsym $mod+h focus left
