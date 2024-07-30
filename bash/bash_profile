@@ -1,0 +1,10 @@
+#
+# ~/.bash_profile
+#
+if [ -z "${DISPLAY}" -a "$(tty)" = "/dev/tty1" ];
+then
+  /usr/bin/tdm
+fi
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
