@@ -20,6 +20,8 @@ alias con-hdmi-sound='xrandr --output HDMI-1 --auto --right-of eDP-1; pactl set-
 alias con-hdmi-no-sound='xrandr --output HDMI-1 --auto --right-of eDP-1; pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo+input:analog-stereo'
 alias con-hdmi-above='xrandr --output HDMI-1 --auto --above eDP-1; pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo+input:analog-stereo'
 alias con-hdmi-above-no-sound='xrandr --output HDMI-1 --auto --above eDP-1'
+alias con-hdmi-mirror='xrandr --output HDMI-1 --auto --same-as eDP-1; pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo+input:analog-stereo'
+alias con-hdmi-mirror-no-sound='xrandr --output HDMI-1 --auto --same-as eDP-1'
 alias discon-monitor='xrandr --auto; pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo+input:analog-stereo'
 
 #connect headphone
