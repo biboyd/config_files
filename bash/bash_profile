@@ -1,9 +1,11 @@
 #
 # ~/.bash_profile
 #
-if [ -z "${DISPLAY}" -a "$(tty)" = "/dev/tty1" ];
-then
-  /usr/bin/tdm
+export PATH="$HOME/Repo/config_files/convenient_scripts/:$PATH"
+export XDG_CURRENT_DESKTOP=sway:wlroots
+if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] && [ "$(tty)" = "/dev/tty1" ]; then
+	# Update path
+    exec sway
 fi
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
