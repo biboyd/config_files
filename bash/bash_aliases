@@ -11,9 +11,8 @@ alias bblog='source ~/python-venv/bblog/bin/activate'
 alias ihpcss='source ~/python-venv/ihpcss/bin/activate'
 
 # connect 2nd monitor
-alias con-hdmi='swaymesg output "*HDMI*" pos 1920 0'
-alias con-hdmi-above='swaymesg output "*HDMI*" pos 0 1200'
-alias discon-monitor='swaymesg output "*HDMI*" disable'
+alias con-hdmi='swaymsg output "eDP-1" pos 0 0; swaymsg output "HDMI-A-1" pos 1920 0'
+alias con-hdmi-above='swaymsg output "eDP-1" pos 0 0; swaymsg output "HDMI-A-1" pos 0 1200'
 
 #connect headphone
 alias con-phones='bluetoothctl connect 14:3F:A6:34:58:E3'
