@@ -33,3 +33,8 @@ alias bridges2='ssh -p 2222 biboyd@bridges2.psc.edu'
 alias perlmutter='ssh -Yl biboyd perlmutter-p1.nersc.gov'
 
 alias fleetwood-jupyter='ssh -NfL 8890:localhost:8890 fleetwood;firefox localhost:8890'
+
+
+# wifi shortcuts
+alias scan-wifi='nmcli d wifi'
+alias connect-wifi='nmcli --ask d wifi connect'
