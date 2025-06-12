@@ -14,7 +14,7 @@ font pango:DejaVu Sans Mono 8
 # export some things that I think need to be exported
 exec systemctl --user import-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
 
-output * bg ${HOME}/Pictures/curr_background.png fit
+output * bg ${HOME}/Pictures/curr_background.png fill
 
 exec mako
 
