@@ -22,12 +22,12 @@ alias discon-ohm='bluetoothctl disconnect'
 alias pavucontrol='pwvucontrol'
 
 # hop(ssh) into machines
-alias cori='ssh -X -l biboyd cori.nersc.gov'
+alias cori='ssh -l biboyd cori.nersc.gov'
 alias alcyone='ssh -l biboyd alcyone.iacs.stonybrook.edu'
 alias electra='ssh -l biboyd electra.iacs.stonybrook.edu'
-alias fleetwood='ssh -Yl biboyd fleetwood.astro.sunysb.edu'
-alias vulcan='ssh -Yl bbrendan vulcan.astro.sunysb.edu'
-alias uhura='ssh -Yl bbrendan uhura.astro.sunysb.edu'
+alias fleetwood='ssh -l biboyd fleetwood.astro.sunysb.edu'
+alias vulcan='ssh -l bbrendan vulcan.astro.sunysb.edu'
+alias uhura='ssh -l bbrendan uhura.astro.sunysb.edu'
 alias bridges2='ssh -p 2222 biboyd@bridges2.psc.edu'
 alias perlmutter='ssh -Yl biboyd perlmutter-p1.nersc.gov'
 
