@@ -3,7 +3,7 @@
 # setup specific filetypes (either dot files in home dir or directorys under ~/.config/
 dotfiles=("vim/vimrc" "bash/inputrc" "bash/bashrc" "bash/bash_profile" "bash/bash_aliases" "screen/screenrc")
 
-configdirs=("mpv" "sway" "i3status" "foot")
+configdirs=("mpv" "sway" "i3status" "foot" "mako")
 
 electron_flags=("spotify-flags.conf" "code-flags.conf")
 
