@@ -32,7 +32,7 @@ bindsym $mod+d exec wmenu-run
 
 # open fire fox
 bindsym $mod+Shift+f exec firefox
-bindsym $mod+Shift+s exec xfce4-screenshooter
+bindsym $mod+Shift+s exec screenshot.sh
 
 
 
@@ -152,10 +152,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-assign [class="Slack"] 2
-for_window [class="Spotify"] move container to workspace 3
-for_window [class="mpv"] fullscreen toggle, floating enable
-for_window [class="zoom"] move containter to workspace 4
+for_window [app_id="mpv"] fullscreen toggle, floating enable
+for_window [app_id="zenity"] floating enable
 
 #
 # Status Bar:
@@ -333,13 +331,12 @@ bindsym Shift+$mod+n exec swaymsg move workspace to output up
 # touchpad configuration:
 #
   input "1267:13040:ELAN010A:00_04F3:32F0_Touchpad" {
-
       dwt enabled
       tap enabled
+      drag_lock disabled
       natural_scroll enabled
       middle_emulation enabled
   }
-
 
 input type:keyboard xkb_numlock enabled
 
