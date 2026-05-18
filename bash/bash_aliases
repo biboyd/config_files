@@ -27,14 +27,19 @@ alias alcyone='ssh -l biboyd alcyone.iacs.stonybrook.edu'
 alias electra='ssh -l biboyd electra.iacs.stonybrook.edu'
 alias fleetwood='ssh -l biboyd fleetwood.astro.sunysb.edu'
 alias seawulf='ssh -l bbrendan seawulf'
+alias old-seawulf='ssh -l bbrendan old.seawulf'
 alias vulcan='ssh -l bbrendan vulcan.astro.sunysb.edu'
 alias uhura='ssh -l bbrendan uhura.astro.sunysb.edu'
 alias bridges2='ssh -p 2222 biboyd@bridges2.psc.edu'
-alias perlmutter='ssh -Yl biboyd perlmutter-p1.nersc.gov'
+alias perlmutter='ssh -l biboyd perlmutter'
 
 alias fleetwood-jupyter='ssh -NfL 8890:localhost:8890 fleetwood;firefox localhost:8890'
+alias fleetwood-proxy='echo "Go to Firefox proxy settings. SOCKS host: localhost and Port: 9999"; ssh -ND 9999 fleetwood'
 
 
 # wifi shortcuts
 alias scan-wifi='nmcli d wifi'
 alias connect-wifi='nmcli --ask d wifi connect'
+
+# reminder from alan
+alias which-that-alan='echo \"which\" is parenthetical while \"that\" is not. So add comma to the \"which\" cases'
