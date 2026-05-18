@@ -117,6 +117,26 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+#
+# Swap Mode:
+#
+# Swaps focused window with window in direction in order to move it
+# around a layout without altering the layout.
+
+mode "swap" {
+        bindsym h mark --add "_swap", focus left, swap container with mark "_swap", focus left, unmark "_swap"
+        bindsym j mark --add "_swap", focus down, swap container with mark "_swap", focus down, unmark "_swap"
+        bindsym k mark --add "_swap", focus up, swap container with mark "_swap", focus up, unmark "_swap"
+        bindsym l mark --add "_swap", focus right, swap container with mark "_swap", focus right, unmark "_swap"
+        
+        # Return to default mode
+        bindsym q mode "default"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+    }
+bindsym $mod+Shift+w mode "swap"
+
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
@@ -324,6 +344,8 @@ bindsym Shift+$mod+n exec swaymsg move workspace to output up
     # Special keys to adjust brightness via brightnessctl
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+
+    bindsym --locked XF86Assistant exec foot
 
 
 ### Input configuration
