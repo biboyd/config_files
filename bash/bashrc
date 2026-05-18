@@ -129,3 +129,6 @@ export MICROPHYSICS_HOME="$HOME/Repo/Microphysics"
 export AMREX_HOME="$HOME/Repo/amrex"
 
 export INITIAL_MODEL_HOME="$HOME/Repo/initial-models"
+
+# fix ls colors
+LS_COLORS+=':ow=01;33'
