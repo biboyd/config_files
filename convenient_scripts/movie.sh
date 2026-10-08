@@ -22,6 +22,13 @@ for f in $files; do
     ln -s $cwd/$f ${tmpdir}/${fn}
     count=`expr $count + 1`
 done
-ffmpeg -r $fps -f image2 -i ${tmpdir}/img%06d.${suffix} -vcodec libx264 -pix_fmt yuv420p \
-       -s ${width}x${height} -crf 25 -y $output
+
+if [ $suffix = 'gif' ] 
+then
+	ffmpeg -r $fps -f image2 -c:v gif -i ${tmpdir}/img%06d.${suffix} -vcodec libx264 -pix_fmt yuv420p \
+       	-s ${width}x${height} -crf 25 -y $output
+else
+	ffmpeg -r $fps -f image2 -i ${tmpdir}/img%06d.${suffix} -vcodec libx264 -pix_fmt yuv420p \
+		-s ${width}x${height} -crf 25 -y $output
+fi
 rm -r $tmpdir
