@@ -132,3 +132,6 @@ export INITIAL_MODEL_HOME="$HOME/Repo/initial-models"
 
 # fix ls colors
 LS_COLORS+=':ow=01;33'
+
+# use vim keybindings in python
+PYTHON_BASIC_REPL=1
