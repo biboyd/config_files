@@ -1,0 +1,36 @@
+#!/bin/bash
+
+
+curr_year=`date +%Y`
+curr_month=`date +%m`
+prefix="LBM-${curr_year}-"
+month=$1
+year=$2
+
+if [ ! -z $year ]
+then 
+	prefix="LBM-${year}-"
+fi
+
+pandoc_string="-V documentclass=scrartcl" 
+
+if [ -z $month  ]
+then
+	dir=${prefix}${curr_month}
+	echo "update current month, $dir"
+	pandoc $dir/*.md -o notes${dir#LBM}.pdf $pandoc_string
+
+elif [ $month = 'all' ]
+then
+	echo "Update all notes"
+	for dir in ${prefix}?? 
+	do
+		pandoc $dir/*.md -o notes${dir#LBM}.pdf $pandoc_string
+	done
+
+else 
+	dir=${prefix}${month}
+	echo "Update notes $dir"
+	pandoc $dir/*.md -o notes${dir#LBM}.pdf $pandoc_string
+
+fi
